@@ -5,7 +5,16 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="Mongodb.Driver" Version="2.13.1" />
     <PackageReference Include="Swashbuckle.AspNetCore" Version="5.6.3" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\Config.Models\Config.Models.csproj" />
+    <ProjectReference Include="..\IRepository.MongoDB\IRepository.MongoDB.csproj" />
+    <ProjectReference Include="..\IService.MongoDB\IService.MongoDB.csproj" />
+    <ProjectReference Include="..\Repository.MongoDB\Repository.MongoDB.csproj" />
+    <ProjectReference Include="..\Service.MongoDB\Service.MongoDB.csproj" />
   </ItemGroup>
 
 </Project>

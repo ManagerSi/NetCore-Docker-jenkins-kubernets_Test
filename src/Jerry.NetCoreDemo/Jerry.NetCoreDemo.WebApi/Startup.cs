@@ -12,6 +12,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Http;
+using Config.Models;
+using IRepository.MongoDB;
+using Repository.MongoDB;
+using IService.MongoDB;
+using Service.MongoDB;
 
 namespace Jerry.NetCoreDemo.WebApi
 {
@@ -27,6 +32,15 @@ namespace Jerry.NetCoreDemo.WebApi
         // This method gets called by the runtime. Use this method to add services to the container.
         public void ConfigureServices(IServiceCollection services)
         {
+            #region mongodb
+            
+            // requires using Microsoft.Extensions.Options
+            services.Configure<MongodbSettings>(Configuration.GetSection(nameof(MongodbSettings)));
+            services.AddTransient<IBookRepository, BookRepository>();
+            services.AddTransient<IBookService, BookService>();
+
+            #endregion
+
             services.AddTransient<IHttpContextAccessor, HttpContextAccessor>();
             services.AddControllers();
             services.AddSwaggerGen(c =>
