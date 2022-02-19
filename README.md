@@ -13,11 +13,11 @@ api服务
 	  dotnet Jerry.NetCoreDemo.WebApi.dll --urls=http://localhost:8880 --port=8880
 	  dotnet Jerry.NetCoreDemo.WebApi.dll --urls=http://localhost:8881 --port=8881
 	  dotnet Jerry.NetCoreDemo.WebApi.dll --urls=http://localhost:8882 --port=8882
-
+	
 	测试
 		http://localhost:5000/WeatherForecast
 		http://localhost:8889/WeatherForecast
-	
+
 ------------------------------------------------
 nginx
 ------------------------------------------------
@@ -30,6 +30,10 @@ nginx
 		查看进程	tasklist /fi "imagename eq nginx.exe"
 		结束		nginx -s stop
 		重新载入：	nginx.exe -s reload
-
+	
 	测试API服务
 		http://localhost:8080/WeatherForecast
+
+------------------------------------------------
+other
+------------------------------------------------
